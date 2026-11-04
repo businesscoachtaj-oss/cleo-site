@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cleo · More time for the things you love</title>
+<meta name="description" content="Cleo keeps your whole household in one calm place: the calendar, the dinner plan, the school run, jobs for the kids, and the nanny or cleaner. Made in Australia.">
+<meta property="og:title" content="Cleo · More time for the things you love">
+<meta property="og:description" content="Your whole household in one calm place. Join the waitlist.">
+<meta property="og:image" content="https://cleoapp.com.au/img/logo-light.png">
+<meta property="og:url" content="https://cleoapp.com.au/">
+<meta name="theme-color" content="#5E5282">
+<style>
+  @font-face { font-family: 'Fredoka'; src: url('fonts/Fredoka_400Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Fredoka'; src: url('fonts/Fredoka_500Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Fredoka'; src: url('fonts/Fredoka_600SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+  :root {
+    --plum: #5E5282;
+    --deep: #3F3560;
+    --muted: #6F6299;
+    --lav: #A898D0;
+    --light-lav: #C9BFE8;
+    --pale: #F3F0FA;
+    --peach: #F4B79A;
+    --peach-tint: #FDEDE5;
+    --butter: #F8D98E;
+    --line: #E3DDF1;
+    --white: #FFFFFF;
+    --midnight: #2A2342;
+    --champagne: #C9A96E;
+    --ivory: #F6F1EA;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: 'Fredoka', system-ui, sans-serif;
+    font-weight: 400;
+    color: var(--deep);
+    background: var(--pale);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 24px; }
+  h1, h2, h3 { font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+
+  /* Top bar */
+  .top { background: var(--plum); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 20px; }
+  .top img { height: 34px; }
+  .top nav { display: flex; gap: 28px; align-items: center; }
+  .top nav a { color: var(--light-lav); text-decoration: none; font-weight: 500; }
+  .top nav a.cta { color: var(--deep); background: var(--peach); padding: 10px 18px; border-radius: 999px; }
+
+  /* Hero */
+  .hero { background: var(--plum); color: var(--white); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding-block: 56px 0; }
+  .hero h1 { font-size: clamp(40px, 5.2vw, 64px); }
+  .hero h1 span { color: var(--peach); }
+  .hero .lead { color: var(--light-lav); font-size: 20px; margin-top: 20px; max-width: 30ch; }
+  .join { margin-top: 32px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 24px; padding: 20px; max-width: 480px; }
+  .join .badge { display: inline-flex; gap: 8px; align-items: center; background: var(--butter); color: var(--deep); border-radius: 999px; padding: 4px 12px; font-weight: 600; font-size: 14px; }
+  .join p { margin-top: 10px; color: var(--pale); }
+  .join form { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .join input { flex: 1 1 220px; font: inherit; padding: 14px 18px; border-radius: 999px; border: none; color: var(--deep); }
+  .join button { font: inherit; font-weight: 600; padding: 14px 22px; border-radius: 999px; border: none; background: var(--peach); color: var(--deep); box-shadow: 0 6px 12px rgba(20,10,50,0.3); }
+  .join small { display: block; margin-top: 10px; color: var(--light-lav); font-size: 13px; }
+  .join small.err { color: #FFD9C9; }
+  .join .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .join button[disabled] { opacity: 0.7; }
+  .phone { justify-self: center; width: 330px; border-radius: 44px; padding: 10px; background: #1d1830; box-shadow: 0 30px 60px rgba(20,10,50,0.45); transform: translateY(40px); }
+  .phone img { border-radius: 36px; }
+
+  /* Moments */
+  .moments { padding-block: 120px 72px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .moments h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 8px; max-width: 22ch; }
+  .moment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+  .moment { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 24px; box-shadow: 0 10px 18px rgba(20,10,50,0.06); }
+  .moment .time { font-weight: 600; color: var(--plum); font-size: 15px; }
+  .moment h3 { font-size: 22px; margin-top: 8px; }
+  .moment p { margin-top: 10px; color: var(--muted); }
+  .moment .relief { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); color: var(--deep); font-weight: 500; }
+
+  /* Features */
+  .features { padding-block: 24px 80px; }
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding-block: 40px; }
+  .feature.flip .shot { order: 2; }
+  .shot { justify-self: center; width: 290px; border-radius: 40px; padding: 9px; background: #1d1830; box-shadow: 0 24px 48px rgba(20,10,50,0.25); }
+  .shot img { border-radius: 32px; }
+  .feature h3 { font-size: clamp(26px, 3vw, 36px); margin-top: 8px; }
+  .feature p { margin-top: 14px; font-size: 18px; color: var(--muted); max-width: 42ch; }
+  .feature ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .feature li { display: flex; gap: 10px; align-items: baseline; }
+  .feature li::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--peach); flex: none; transform: translateY(-1px); }
+
+  /* Kids */
+  .kids { background: var(--white); border-block: 1px solid var(--line); }
+  .kids .wrap { display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; padding-block: 56px; }
+  .kids .mascot { width: 140px; }
+  .kids h2 { font-size: clamp(26px, 3vw, 36px); }
+  .kids p { margin-top: 12px; color: var(--muted); font-size: 18px; max-width: 48ch; }
+  .kids .shot { width: 230px; }
+
+  /* Plans */
+  .plans { padding-block: 88px; }
+  .plans .head { text-align: center; }
+  .plans h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 8px; }
+  .plans .head p { color: var(--muted); margin-top: 12px; font-size: 18px; }
+  .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; align-items: stretch; }
+  .plan { background: var(--white); border: 1px solid var(--line); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .plan .name { font-weight: 600; font-size: 22px; }
+  .plan .price { font-size: 40px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .plan .price small { font-size: 16px; font-weight: 400; color: var(--muted); }
+  .plan .year { color: var(--muted); font-size: 14px; margin-top: -8px; }
+  .plan ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--deep); }
+  .plan li::before { content: '✓  '; color: var(--plum); font-weight: 600; }
+  .plan.popular { border: 2px solid var(--peach); box-shadow: 0 16px 32px rgba(20,10,50,0.1); position: relative; }
+  .plan.popular .tag { position: absolute; top: -14px; left: 28px; background: var(--peach); color: var(--deep); font-weight: 600; font-size: 13px; padding: 4px 12px; border-radius: 999px; }
+  .plan.exec { background: var(--midnight); color: var(--ivory); border-color: rgba(201,169,110,0.4); }
+  .plan.exec .name, .plan.exec .price { font-family: Georgia, 'Times New Roman', serif; font-weight: 500; }
+  .plan.exec .price small, .plan.exec .year { color: #CFC6E0; }
+  .plan.exec li::before { color: var(--champagne); }
+  .plan.exec ul { color: var(--ivory); }
+  .founding-note { margin: 28px auto 0; max-width: 640px; text-align: center; background: var(--peach-tint); border-radius: 18px; padding: 14px 20px; font-weight: 500; }
+
+  /* Closing */
+  .closing { background: var(--plum); color: var(--white); text-align: center; }
+  .closing .wrap { padding-block: 72px; }
+  .closing h2 { font-size: clamp(30px, 3.6vw, 44px); }
+  .closing p { color: var(--light-lav); margin-top: 12px; font-size: 18px; }
+  .closing .join { margin: 28px auto 0; text-align: left; }
+
+  footer { background: var(--deep); color: var(--light-lav); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-block: 32px; font-size: 15px; }
+  footer a { color: var(--light-lav); }
+  footer img { height: 26px; }
+
+  @media (max-width: 860px) {
+    .top nav a:not(.cta) { display: none; }
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 36px; }
+    .phone { width: 280px; }
+    .moment-grid, .plan-grid { grid-template-columns: 1fr; }
+    .feature, .feature.flip { grid-template-columns: 1fr; gap: 28px; }
+    .feature.flip .shot { order: 0; }
+    .kids .wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .moments { padding-top: 96px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="img/logo-dark.png" alt="cleo">
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#plans">Plans</a>
+      <a href="#join" class="cta">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>More time for the things you love, <span>with the ones you love.</span></h1>
+      <p class="lead">Cleo keeps your whole household in one calm place. The calendar, the dinner plan, the school run and the kids, all handled.</p>
+      <div class="join" id="join">
+        <span class="badge spots">Founding families · the first 100</span>
+        <p>Join the first 100 and get 3 months of Executive Household free when Cleo opens.</p>
+        <form class="joinform" novalidate>
+          <input type="email" name="email" placeholder="Your email" aria-label="Your email" autocomplete="email" inputmode="email" required maxlength="254">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit">Save my spot</button>
+        </form>
+        <small class="note">Made in Australia. No spam, just a hello when we open.</small>
+      </div>
+    </div>
+    <div class="phone"><img src="img/01-home.webp" alt="Cleo home screen showing what needs you today, who is collecting the kids and the handover notes"></div>
+  </div>
+</section>
+
+<section class="moments" id="how">
+  <div class="wrap">
+    <div class="eyebrow">Sound familiar?</div>
+    <h2>The moments that run your week, made lighter.</h2>
+    <div class="moment-grid">
+      <div class="moment">
+        <div class="time">3:05 pm</div>
+        <h3>Who's picking up whom?</h3>
+        <p>Three kids, two schools, one group chat nobody reads.</p>
+        <div class="relief">Cleo shows who's collecting today, right on the home screen.</div>
+      </div>
+      <div class="moment">
+        <div class="time">5:00 pm</div>
+        <h3>What's for dinner?</h3>
+        <p>The fridge is half empty and everyone's hungry.</p>
+        <div class="relief">Plan the week on the board. The ingredients go straight to the shopping list.</div>
+      </div>
+      <div class="moment">
+        <div class="time">8:30 pm</div>
+        <h3>Did anyone tell me?</h3>
+        <p>The swimming time changed and you heard last.</p>
+        <div class="relief">One family calendar, with handover notes everyone can see.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="feature">
+      <div class="shot"><img src="img/02-calendar.webp" alt="Cleo family calendar"></div>
+      <div>
+        <div class="eyebrow">One place</div>
+        <h3>The whole family's week, together.</h3>
+        <p>School, sport, work and play, with reminders before they matter.</p>
+        <ul>
+          <li>Link the calendars you already use</li>
+          <li>Everyone in their own colour</li>
+          <li>A private calendar that's just for you</li>
+        </ul>
+      </div>
+    </div>
+    <div class="feature flip">
+      <div class="shot"><img src="img/03-board.webp" alt="Cleo board with dinner plan and notes"></div>
+      <div>
+        <div class="eyebrow">The board</div>
+        <h3>Like the fridge door, but tidy.</h3>
+        <p>Dinners for the week, notes and a sketch pad, on the kitchen tablet or your phone.</p>
+        <ul>
+          <li>Save recipes from any website</li>
+          <li>Ingredients go to the shopping list in one tap</li>
+          <li>Tasks and chores with a gentle nudge</li>
+        </ul>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="shot"><img src="img/05-staff.webp" alt="Cleo staff roster"></div>
+      <div>
+        <div class="eyebrow">Help at home</div>
+        <h3>Nannies, cleaners and grandparents, in the loop.</h3>
+        <p>Give the people who help you just the access they need.</p>
+        <ul>
+          <li>Rosters, leave and hours in one place</li>
+          <li>Family and friends join free</li>
+          <li>Xero payroll on Executive Household</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kids">
+  <div class="wrap">
+    <img class="mascot" src="img/cleo-happy.png" alt="Cleo the friendly robot">
+    <div>
+      <div class="eyebrow">For the kids</div>
+      <h2>Their own login. No phone number needed.</h2>
+      <p>Kids sign in with a pairing code and a PIN. They see their day, their jobs and their pocket money, and they can message the grown-ups you approve. Cleo the robot keeps them company.</p>
+    </div>
+    <div class="shot"><img src="img/15-kid-home.webp" alt="Cleo kids home screen"></div>
+  </div>
+</section>
+
+<section class="plans" id="plans">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Plans</div>
+      <h2>Start free. Grow when you're ready.</h2>
+      <p>Prices in Australian dollars. Cancel any time, and nothing you make is ever deleted.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan">
+        <div class="name">Free</div>
+        <div class="price">$0</div>
+        <ul>
+          <li>Family calendar and reminders</li>
+          <li>Tasks, lists, birthdays and the board</li>
+          <li>Link one Google or Apple calendar</li>
+          <li>2 parents and 4 others</li>
+        </ul>
+      </div>
+      <div class="plan popular">
+        <span class="tag">Most families</span>
+        <div class="name">Household</div>
+        <div class="price">$9.99 <small>a month</small></div>
+        <div class="year">or $99 a year</div>
+        <ul>
+          <li>Everything in Free</li>
+          <li>Kids' own logins and safe messages</li>
+          <li>Recipes, budget and location sharing</li>
+          <li>More linked calendars and family email</li>
+          <li>Up to 10 people</li>
+        </ul>
+      </div>
+      <div class="plan exec">
+        <div class="name">Executive Household</div>
+        <div class="price">$29.99 <small>a month</small></div>
+        <div class="year">or $299 a year</div>
+        <ul>
+          <li>Everything in Household</li>
+          <li>Staff roster, leave and hours</li>
+          <li>Xero payroll</li>
+          <li>Unlimited people, and a refined look</li>
+        </ul>
+      </div>
+    </div>
+    <p class="founding-note">Founding families get 3 months of Executive Household free. 92 spots left.</p>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Your household, handled.</h2>
+    <p>Be one of the first 100 families.</p>
+    <div class="join">
+      <span class="badge spots">Founding families · the first 100</span>
+      <form class="joinform" novalidate>
+        <input type="email" name="email" placeholder="Your email" aria-label="Your email" autocomplete="email" inputmode="email" required maxlength="254">
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Save my spot</button>
+      </form>
+      <small class="note"></small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-dark.png" alt="cleo">
+    <div>Questions? <a href="mailto:cleo@cleoapp.com.au">cleo@cleoapp.com.au</a></div>
+    <div><a href="https://cleo-sigma.vercel.app/privacy">Privacy</a> · <a href="https://cleo-sigma.vercel.app/terms">Terms</a> · Made in Australia</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Public values, safe in a web page: the project address and its public (anon) key.
+  var URL_ = "https://brqxjwjkdycligqfmjxv.supabase.co";
+  var KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJycXhqd2prZHljbGlncWZtanh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5NjcwNzQsImV4cCI6MjEwNzU0MzA3NH0.gMw1RR_zqeFQUIDB7IsZoNxtj4nWLlzSbFvnlDdz31Y";
+  var H = { "Content-Type": "application/json", "apikey": KEY, "Authorization": "Bearer " + KEY };
+  var source = (new URLSearchParams(location.search).get("src") || "site").slice(0, 40);
+  var badges = document.querySelectorAll(".spots");
+
+  // How many founding spots are left. The badge quietly disappears once they are gone.
+  fetch(URL_ + "/rest/v1/rpc/waitlist_founding_left", { method: "POST", headers: H, body: "{}" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (left) {
+      left = Number(left);
+      if (!isFinite(left)) return;
+      badges.forEach(function (b) {
+        if (left > 0) b.textContent = "Founding families · " + left + " of 100 spots left";
+        else b.hidden = true;
+      });
+    })
+    .catch(function () {});
+
+  document.querySelectorAll("form.joinform").forEach(function (form) {
+    var note = form.parentNode.querySelector(".note");
+    var button = form.querySelector("button");
+    var original = note ? note.textContent : "";
+    function say(text, bad) { if (!note) return; note.textContent = text; note.className = "note" + (bad ? " err" : ""); }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (form.website.value) { form.hidden = true; say("You're on the list. We'll email you when Cleo opens."); return; }
+      var email = form.email.value.trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { say("That email doesn't look right. Please check it.", true); return; }
+      button.disabled = true; button.textContent = "Saving...";
+      fetch(URL_ + "/rest/v1/rpc/join_waitlist", { method: "POST", headers: H, body: JSON.stringify({ p_email: email, p_name: null, p_source: source }) })
+        .then(function (r) { if (!r.ok) throw new Error("bad"); return r.json(); })
+        .then(function (res) {
+          if (res.status === "invalid") { say("That email doesn't look right. Please check it.", true); return; }
+          if (res.status === "busy") { say("Lots of people are joining right now. Please try again in a minute.", true); return; }
+          form.hidden = true;
+          if (res.status === "already") say("You're already on the list. We'll email you when Cleo opens.");
+          else if (res.founding) say("You're a founding family. 3 months of Executive Household free when Cleo opens. We'll email you.");
+          else say("You're on the list. We'll email you when Cleo opens.");
+        })
+        .catch(function () { say("Something went wrong on our end. Please try again.", true); })
+        .then(function () { button.disabled = false; button.textContent = "Save my spot"; });
+    });
+    void original;
+  });
+})();
+</script>
+</body>
+</html>
