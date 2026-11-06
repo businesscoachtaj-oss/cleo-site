@@ -153,6 +153,81 @@
     .kids .wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; }
     .moments { padding-top: 96px; }
   }
+
+  /* ---- mockup additions ---- */
+  .trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; color: var(--light-lav); font-size: 15px; }
+  .trust span { display: inline-flex; align-items: center; gap: 8px; }
+  .trust span::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--peach); }
+  .hero-shots { position: relative; justify-self: center; width: 420px; height: 560px; }
+  .hero-shots .phone { position: absolute; transform: none; }
+  .hero-shots .phone.back { width: 250px; right: 0; top: 70px; transform: rotate(6deg); opacity: .95; }
+  .hero-shots .phone.front { width: 290px; left: 0; top: 20px; z-index: 2; }
+  .hero-shots .bot { position: absolute; width: 96px; left: -34px; bottom: 30px; z-index: 3; filter: drop-shadow(0 10px 16px rgba(20,10,50,.35)); }
+  .hero { position: relative; }
+  .hero::after { content: ''; display: block; height: 60px; background: var(--pale); border-radius: 60px 60px 0 0; margin-top: -10px; position: relative; z-index: 1; }
+
+  .email { padding-block: 40px 88px; }
+  .email .wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+  .email h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 8px; }
+  .email p.sub { margin-top: 14px; font-size: 18px; color: var(--muted); max-width: 40ch; }
+  .addr { margin-top: 20px; display: inline-flex; gap: 10px; align-items: center; background: var(--white); border: 1px dashed var(--lav); border-radius: 14px; padding: 10px 14px; font-weight: 500; color: var(--plum); }
+  .flow { display: grid; gap: 14px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; box-shadow: 0 12px 24px rgba(20,10,50,.07); }
+  .card .from { font-size: 13px; color: var(--muted); }
+  .card .subj { font-weight: 600; margin-top: 4px; }
+  .card .body { color: var(--muted); margin-top: 6px; font-size: 15px; }
+  .card .body mark { background: var(--butter); color: var(--deep); border-radius: 6px; padding: 0 4px; }
+  .arrow { justify-self: center; color: var(--plum); font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  .arrow::before, .arrow::after { content: ''; width: 40px; height: 1px; background: var(--lav); }
+  .event { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; border-left: 6px solid var(--peach); }
+  .event .date { text-align: center; background: var(--peach-tint); border-radius: 14px; padding: 8px 12px; font-weight: 600; line-height: 1.1; }
+  .event .date small { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
+  .event .add { background: var(--plum); color: #fff; border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: 14px; }
+  .event .who { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  .steps { background: var(--white); border-block: 1px solid var(--line); }
+  .steps .wrap { padding-block: 72px; }
+  .steps h2 { font-size: clamp(28px, 3.2vw, 40px); margin-top: 8px; text-align: center; }
+  .steps .eyebrow { text-align: center; }
+  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; counter-reset: step; }
+  .step { background: var(--pale); border-radius: 24px; padding: 26px; }
+  .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--plum); color: #fff; font-weight: 600; }
+  .step h3 { font-size: 21px; margin-top: 14px; }
+  .step p { margin-top: 8px; color: var(--muted); }
+
+  .feature { padding-block: 28px; }
+  .shot-bg { justify-self: center; display: grid; place-items: center; width: 420px; padding-block: 24px; background: radial-gradient(closest-side, rgba(201,191,232,.85), rgba(201,191,232,0)); }
+  .feature.flip .shot-bg { order: 2; }
+  .shot-bg .shot { width: 260px; }
+
+  .safe { padding-block: 88px 24px; }
+  .safe h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 8px; max-width: 20ch; }
+  .safe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 32px; }
+  .safe-card { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+  .safe-card .ico { width: 44px; height: 44px; border-radius: 14px; background: var(--peach-tint); display: grid; place-items: center; font-size: 22px; }
+  .safe-card h3 { font-size: 19px; margin-top: 14px; }
+  .safe-card p { margin-top: 8px; color: var(--muted); font-size: 15px; }
+
+  .faq-mini { padding-block: 24px 88px; }
+  .faq-mini .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
+  .faq-mini h2 { font-size: clamp(28px, 3.2vw, 40px); margin-top: 8px; }
+  .faq-mini details { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; margin-bottom: 10px; }
+  .faq-mini summary { font-weight: 600; cursor: pointer; }
+  .faq-mini details p { margin-top: 8px; color: var(--muted); }
+
+  @media (max-width: 860px) {
+    .hero-shots { width: 320px; height: 470px; }
+    .hero-shots .phone.front { width: 240px; }
+    .hero-shots .phone.back { width: 200px; top: 60px; }
+    .hero-shots .bot { width: 76px; left: -10px; }
+    .email .wrap, .faq-mini .wrap { grid-template-columns: 1fr; gap: 32px; }
+    .step-grid { grid-template-columns: 1fr; }
+    .safe-grid { grid-template-columns: 1fr 1fr; }
+    .shot-bg { width: 320px; }
+    .feature.flip .shot-bg { order: 0; }
+    .shot-bg .shot { width: 230px; }
+  }
+  @media (max-width: 520px) { .safe-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -174,6 +249,7 @@
     <div>
       <h1>More time for the things you love, <span>with the ones you love.</span></h1>
       <p class="lead">Cleo keeps your whole household in one calm place. The calendar, the dinner plan, the school run and the kids, all handled.</p>
+      <div class="trust"><span>Made in Australia</span><span>Your data stays in Sydney</span><span>Free plan, cancel any time</span></div>
       <div class="join" id="join">
         <span class="badge spots">Founding families · the first 100</span>
         <p>Join the first 100 and get 3 months of Executive Household free when Cleo opens.</p>
@@ -185,7 +261,7 @@
         <small class="note">Made in Australia. No spam, just a hello when we open.</small>
       </div>
     </div>
-    <div class="phone"><img src="img/01-home.webp" alt="Cleo home screen showing what needs you today, who is collecting the kids and the handover notes"></div>
+    <div class="hero-shots"><div class="phone back"><img src="img/02-calendar.webp" alt="Cleo family calendar"></div><div class="phone front"><img src="img/01-home.webp" alt="Cleo home screen showing what needs you today, who is collecting the kids and the handover notes"></div><img class="bot" src="img/cleo-happy.png" alt=""></div>
   </div>
 </section>
 
@@ -216,10 +292,47 @@
   </div>
 </section>
 
+
+<section class="email">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">School emails, sorted</div>
+      <h2>Forward the school email. Cleo finds the dates.</h2>
+      <p class="sub">Your family gets its own Cleo email address. Forward school and sport emails, or snap a note or newsletter, and Cleo pulls out the dates. Nothing goes on the calendar until a parent taps add.</p>
+      <div class="addr">✉️ bennett@cleoapp.com.au</div>
+    </div>
+    <div class="flow">
+      <div class="card">
+        <div class="from">From: Riverside Primary · Fwd by Sarah</div>
+        <div class="subj">Term 4 swimming carnival</div>
+        <div class="body">Our swimming carnival is on <mark>Friday 14 November</mark> at the aquatic centre. Students need to be at school by <mark>8:15am</mark> in house colours...</div>
+      </div>
+      <div class="arrow">Cleo found 1 date</div>
+      <div class="card event">
+        <div class="date">14<small>Nov</small></div>
+        <div><div class="subj">Swimming carnival</div><div class="who">Fri 8:15 am · Ava · from Riverside Primary</div></div>
+        <div class="add">Add</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2>Up and running before school pickup.</h2>
+    <div class="step-grid">
+      <div class="step"><h3>Make your household</h3><p>Start free in your phone or computer browser, and add it to your home screen.</p></div>
+      <div class="step"><h3>Bring everyone in</h3><p>Invite the other parent, grandparents and the nanny. Kids pair with a code and a 4 number PIN.</p></div>
+      <div class="step"><h3>Let the dates come to you</h3><p>Link Google or Apple calendars and forward school emails. Everyone sees their week in their own colour.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="features">
   <div class="wrap">
     <div class="feature">
-      <div class="shot"><img src="img/02-calendar.webp" alt="Cleo family calendar"></div>
+      <div class="shot-bg"><div class="shot"><img src="img/02-calendar.webp" alt="Cleo family calendar"></div></div>
       <div>
         <div class="eyebrow">One place</div>
         <h3>The whole family's week, together.</h3>
@@ -232,7 +345,7 @@
       </div>
     </div>
     <div class="feature flip">
-      <div class="shot"><img src="img/03-board.webp" alt="Cleo board with dinner plan and notes"></div>
+      <div class="shot-bg"><div class="shot"><img src="img/03-board.webp" alt="Cleo board with dinner plan and notes"></div></div>
       <div>
         <div class="eyebrow">The board</div>
         <h3>Like the fridge door, but tidy.</h3>
@@ -245,7 +358,7 @@
       </div>
     </div>
     <div class="feature">
-      <div class="shot"><img src="img/05-staff.webp" alt="Cleo staff roster"></div>
+      <div class="shot-bg"><div class="shot"><img src="img/05-staff.webp" alt="Cleo staff roster"></div></div>
       <div>
         <div class="eyebrow">Help at home</div>
         <h3>Nannies, cleaners and grandparents, in the loop.</h3>
@@ -268,7 +381,21 @@
       <h2>Their own login. No phone number needed.</h2>
       <p>Kids sign in with a pairing code and a PIN. They see their day, their jobs and their pocket money, and they can message the grown-ups you approve. Cleo the robot keeps them company.</p>
     </div>
-    <div class="shot"><img src="img/15-kid-home.webp" alt="Cleo kids home screen"></div>
+    <div class="shot-bg"><div class="shot"><img src="img/15-kid-home.webp" alt="Cleo kids home screen"></div></div>
+  </div>
+</section>
+
+
+<section class="safe">
+  <div class="wrap">
+    <div class="eyebrow">Private by design</div>
+    <h2>Safe for kids. Private for families.</h2>
+    <div class="safe-grid">
+      <div class="safe-card"><div class="ico">🧒</div><h3>No phone number for kids</h3><p>Kids sign in with a pairing code and a 4 number PIN, and only message the grown-ups you approve.</p></div>
+      <div class="safe-card"><div class="ico">🔒</div><h3>Everyone sees only their part</h3><p>Parents see everything. Family, friends and staff see only what you share. Staff see only their own work.</p></div>
+      <div class="safe-card"><div class="ico">🇦🇺</div><h3>Kept in Sydney</h3><p>Cleo's database is in Sydney, Australia, and we never sell your information.</p></div>
+      <div class="safe-card"><div class="ico">✅</div><h3>You say yes first</h3><p>Dates Cleo finds in emails and notes wait for a parent to check them before they go on the calendar.</p></div>
+    </div>
   </div>
 </section>
 
@@ -282,7 +409,7 @@
     <div class="plan-grid">
       <div class="plan">
         <div class="name">Free</div>
-        <div class="price">$0</div>
+        <div class="price">A$0</div>
         <ul>
           <li>Family calendar and reminders</li>
           <li>Tasks, lists, birthdays and the board</li>
@@ -293,7 +420,7 @@
       <div class="plan popular">
         <span class="tag">Most families</span>
         <div class="name">Household</div>
-        <div class="price">$9.99 <small>a month</small></div>
+        <div class="price">A$9.99 <small>a month</small></div>
         <div class="year">or $99 a year</div>
         <ul>
           <li>Everything in Free</li>
@@ -306,7 +433,7 @@
       </div>
       <div class="plan exec">
         <div class="name">Executive Household</div>
-        <div class="price">$29.99 <small>a month</small></div>
+        <div class="price">A$29.99 <small>a month</small></div>
         <div class="year">or $299 a year</div>
         <ul>
           <li>Everything in Household</li>
@@ -317,6 +444,19 @@
       </div>
     </div>
     <p class="founding-note">Founding families get 3 months of Executive Household free.<span class="spots-left"></span></p>
+  </div>
+</section>
+
+
+<section class="faq-mini">
+  <div class="wrap">
+    <div><div class="eyebrow">Questions</div><h2>The things families ask us most.</h2><p style="margin-top:12px;color:var(--muted)"><a href="/faq" style="color:var(--plum);font-weight:600">See every question</a></p></div>
+    <div>
+      <details open><summary>When can I use it?</summary><p>Cleo is launching in Australia first. Join the waitlist and we'll email you as soon as it opens.</p></details>
+      <details><summary>Do my kids need a phone number or email?</summary><p>No. A parent pairs their device with a code, and they sign in with a 4 number PIN.</p></details>
+      <details><summary>Where is my information kept?</summary><p>Cleo's database is in Sydney, Australia. We don't sell your information.</p></details>
+      <details><summary>Can I cancel?</summary><p>Yes, any time. You keep everything you made and go back to the Free plan.</p></details>
+    </div>
   </div>
 </section>
 
