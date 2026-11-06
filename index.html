@@ -159,11 +159,12 @@
 
 <header class="top">
   <div class="wrap">
-    <img src="img/logo-dark.png" alt="cleo">
+    <a href="/"><img src="img/logo-dark.png" alt="cleo"></a>
     <nav>
-      <a href="#how">How it works</a>
-      <a href="#plans">Plans</a>
-      <a href="#join" class="cta">Join the waitlist</a>
+      <a href="/features">Features</a>
+      <a href="/plans">Plans</a>
+      <a href="/faq">FAQ</a>
+      <a href="/#join" class="cta">Join the waitlist</a>
     </nav>
   </div>
 </header>
@@ -299,6 +300,7 @@
           <li>Kids' own logins and safe messages</li>
           <li>Recipes, budget and location sharing</li>
           <li>More linked calendars and family email</li>
+          <li>Scan school notes and newsletters into the calendar</li>
           <li>Up to 10 people</li>
         </ul>
       </div>
@@ -314,7 +316,7 @@
         </ul>
       </div>
     </div>
-    <p class="founding-note">Founding families get 3 months of Executive Household free. 92 spots left.</p>
+    <p class="founding-note">Founding families get 3 months of Executive Household free.<span class="spots-left"></span></p>
   </div>
 </section>
 
@@ -338,7 +340,7 @@
   <div class="wrap">
     <img src="img/logo-dark.png" alt="cleo">
     <div>Questions? <a href="mailto:cleo@cleoapp.com.au">cleo@cleoapp.com.au</a></div>
-    <div><a href="https://cleo-sigma.vercel.app/privacy">Privacy</a> · <a href="https://cleo-sigma.vercel.app/terms">Terms</a> · Made in Australia</div>
+    <div><a href="/features">Features</a> · <a href="/plans">Plans</a> · <a href="/faq">FAQ</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Made in Australia</div>
   </div>
 </footer>
 
@@ -360,6 +362,9 @@
       badges.forEach(function (b) {
         if (left > 0) b.textContent = "Founding families · " + left + " of 100 spots left";
         else b.hidden = true;
+      });
+      document.querySelectorAll(".spots-left").forEach(function (s) {
+        s.textContent = left > 0 ? " " + left + " spots left." : "";
       });
     })
     .catch(function () {});
