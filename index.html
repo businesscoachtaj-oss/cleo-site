@@ -77,7 +77,8 @@
   .join .joined { display: flex; gap: 14px; align-items: center; margin-top: 14px; background: #fff; color: var(--deep); border-radius: 20px; padding: 16px 18px; }
   .join .joined .tick { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--peach); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; }
   .join .joined strong { display: block; font-size: 20px; }
-  .join .joined div span { display: block; margin-top: 2px; font-size: 15px; }
+  .join form[hidden], .join .note[hidden] { display: none; }
+  .join .joined .msg { display: block; margin-top: 2px; font-size: 15px; }
   .join button[disabled] { opacity: 0.7; }
   .phone { justify-self: center; width: 330px; border-radius: 44px; padding: 10px; background: #1d1830; box-shadow: 0 30px 60px rgba(20,10,50,0.45); transform: translateY(40px); }
   .phone img { border-radius: 36px; }
@@ -523,9 +524,9 @@
       var box = document.createElement("div");
       box.className = "joined";
       box.setAttribute("role", "status");
-      box.innerHTML = '<span class="tick" aria-hidden="true">&#10003;</span><div><strong></strong><span></span></div>';
+      box.innerHTML = '<span class="tick" aria-hidden="true">&#10003;</span><div><strong></strong><span class="msg"></span></div>';
       box.querySelector("strong").textContent = title;
-      box.querySelector("div span").textContent = text;
+      box.querySelector(".msg").textContent = text;
       form.parentNode.insertBefore(box, form);
     }
     function say(text, bad) { if (!note) return; note.textContent = text; note.className = "note" + (bad ? " err" : ""); }
